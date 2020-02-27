@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # Easy way of uploading file in ruby https://github.com/carrierwaveuploader/carrierwave
 gem 'carrierwave', '~> 2.0'
 
-gem 'fog-aws'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -35,6 +35,7 @@ gem "cocoon"
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'fog-aws'
 end
 
 group :development, :test do

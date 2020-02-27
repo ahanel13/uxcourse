@@ -1,3 +1,47 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.recipe-box {
+  height: 600px;
+  position: relative;
+  box-shadow: 10px 10px 5px #ffffff;
+  background: #bdc3c7;
+  margin-bottom: 20px;
+}
+
+img.recipe-index {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.recipe-box ul {
+  list-style-type: none;
+  position: absolute;
+  bottom: 0;
+}
+
+.recipe-box li:first-child{
+  font-size: 24px;
+}
+
+.recipe-image {
+    background-image: url("https://recipe01-app-bucket.s3.us-east-2.amazonaws.com/table-on-wooden-plank-326279.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    //height: 1000px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+
+img.recipe-show{
+  width: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img.recipe-container {
+  text-align: center;
+  padding: 10px 20px;
+}

@@ -9,21 +9,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-     <ul class="navbar-nav navbar-right">
-      <li><%= link_to "Home", root_path %></li>
-      
-      <li><%= link_to "About", pages_about_path %></li>
-    </ul>
-     </div>
-   </div>
-  </nav>
-
+  
   <body>
+    <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
+
 </html>

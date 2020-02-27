@@ -1,0 +1,51 @@
+<style>
+  h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: helvetica;
+    color: white;
+  }
+</style>
+
+<div class="recipe-image img-responsive">
+
+  <div class="container text-center">
+    <br>
+    <h1>All Greek Recipes</h1>
+    <br>
+  </div>
+
+<div class="row d-flex justify-content-center">
+    <% @recipes.each do |recipe| %>
+      <div class="col-md-4">
+      <div class="recipe-box">
+        <% if recipe.image? %>
+          <%= link_to (image_tag recipe.image.url, class: "recipe-index"), recipe %>
+        <% end %>
+        <ul>
+            <li><%= recipe.title %></li>
+            <li><%= recipe.description %></li>
+            <li><%= recipe.mealType %></li>
+            <li><%= recipe.mealTime %></li>
+            <div>                        
+            <li><%= link_to 'Show', recipe, :class => "btn btn-light"  %>
+            <%= link_to 'Edit', edit_recipe_path(recipe), :class => "btn btn-light"  %>
+            <%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-light"  %></li>
+            </div>
+            
+        </ul>
+      </div><!-- /recipe-box-->
+      </div><!--col-md-4-->
+    <% end %>
+</div> <!--/row-->
+
+  <div class="row justify-content-center">
+    <a href="/recipes/new" class="btn btn-light btn-lg" role="button" aria-disabled="true">Create New Recipe</a>
+  </div>
+  <br>
+
+</div> <!-- background images -->
+
+
+

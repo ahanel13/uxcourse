@@ -1,3 +1,23 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.home-image {
+    background-image: url("https://recipe01-app-bucket.s3.us-east-2.amazonaws.com/background_rosemary.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 1000px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+
+.about-image {
+    background-image: url("https://recipe01-app-bucket.s3.us-east-2.amazonaws.com/ingredients-chili-pepper-spice-dried-chili-pepper-112780.jpg"); /* The image used */
+    //background-image: url("ingredients-chili-pepper-spice-dried-chili-pepper-112780.jpg" ); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 1000px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }

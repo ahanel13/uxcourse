@@ -1,30 +1,12 @@
 @import "bootstrap/scss/bootstrap";
+@import 'recipes.scss', 'pages.scss';
 
-img.recipe-show{
-    width: 500px;
-    height: auto;
-}
 
-.recipe-box {
-    height: 600px;
-    position: relative;
-    box-shadow: 10px 10px 5px #888888;
-    background: #bdc3c7;
-    margin-bottom: 20px;
-}
-
-img.recipe-index {
-    width: 100%;
-    height: 70%;
-    object-fit: cover;
-}
-
-.recipe-box ul {
-    list-style-type: none;
+.hero-text {
+    text-align: center;
     position: absolute;
-    bottom: 0;
-}
-
-.recipe-box li:first-child{
-    font-size: 24px;
-}
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }

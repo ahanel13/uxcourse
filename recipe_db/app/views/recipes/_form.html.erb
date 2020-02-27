@@ -1,3 +1,19 @@
+<style>
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 50%;
+  height: 100%%
+}
+.rightcolumn{
+  float: right;
+  width: 50%;
+  height: 100%%
+}
+}
+</style>
+
 <%= form_with(model: recipe, local: true) do |form| %>
   <% if recipe.errors.any? %>
     <div id="error_explanation">
@@ -11,45 +27,81 @@
     </div>
   <% end %>
 
+
 <!-- creating a space in the html for the image that will be uploaded-->
-<div class="form-group">
-  <%= form.file_field :image %>
-  <!-- if there is an image/file uploaded display it-->
+<div class="leftcolumn">
   <% if @recipe.image? %>
     <%= image_tag @recipe.image.url, class: "recipe-show" %>
     <!-- allows the user to remove the uploaded image-->
-    <%= form.check_box :remove_image %>
+    <%= form.check_box :remove_image, :class => "btn btn-secondary btn-sml" %>
       Remove Image
     <%end%>
+  <div class="row justify-content-center">
+    <%= form.file_field :image, :class => "btn btn-secondary btn-sml" %>
+  </div>
+  <!-- if there is an image/file uploaded display it-->
 </div>
 
-  <div class="field">
+<div class="rightcolumn">
+  <div class="custom-control center">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title%>
   </div>
+  <br>
 
-  <div class="field">
+  <div class="custom-control">
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
+  <br>
 
-  <h3>Add Ingredients</h3>
-    <%= form.fields_for :ingredients do |ingredient| %>
-      <%= render 'ingredient_fields', f: ingredient %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association "Add Ingredient", form, :ingredients %>
+  <!--getting the meal type-->
+  <div class="custom-control custom-radio">
+    <h3>Type of Cuisine</h3>
+    <%= form.label :mealType, "American", :mealType => "American"  %>
+    <%= form.radio_button :mealType, "American", :checked => true %>
+    <%= form.label :mealType, "Italian", :mealType => "Italian" %>
+    <%= form.radio_button :mealType, "Italian" %>
+    <%= form.label :mealType, "Greek", :mealType => "Greek" %>
+    <%= form.radio_button :mealType, "Greek" %>
+  </div>
+  <br>
+
+  <!--getting the meal time-->
+  <div class="custom-control custom-radio">
+    <h3>Meal Time</h3>
+    <%= form.label :mealTime, "Breakfast", :mealTime => "Breakfast"  %>
+    <%= form.radio_button :mealTime, "Breakfast", :checked => true %>
+    <%= form.label :mealTime, "Lunch", :mealTime => "Lunch" %>
+    <%= form.radio_button :mealTime, "Lunch" %>
+    <%= form.label :mealTime, "Dinner", :mealTime => "Dinner" %>
+    <%= form.radio_button :mealTime, "Dinner" %>
+  </div>
+  <br>
+
+  <div class="custom-control">
+    <h3>Add Ingredients</h3>
+      <%= form.fields_for :ingredients do |ingredient| %>
+        <%= render 'ingredient_fields', f: ingredient %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association "Add Ingredient", form, :ingredients, :class => "btn btn-secondary btn-sml" %>
+        <br>
+      </div>
+  </div>
+  <div class="custom-control">
+    <h3>Add Steps</h3>
+      <%= form.fields_for :steps do |step| %>
+        <%= render 'step_fields', f: step %>
+      <% end %>
+      <div>
+        <%= link_to_add_association "Add Step", form, :steps, :class => "btn btn-secondary btn-sml" %>
+      </div>
+      <br>
     </div>
 
-  <h3>Add Steps</h3>
-    <%= form.fields_for :steps do |step| %>
-      <%= render 'step_fields', f: step %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association "Add Step", form, :steps %>
-    </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions row justify-content-center">
+    <%= form.submit :class => "btn btn-secondary btn-sml" %>
   </div>
 <% end %>
+</div>

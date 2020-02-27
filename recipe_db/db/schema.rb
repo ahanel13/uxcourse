@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_23_175156) do
+ActiveRecord::Schema.define(version: 2020_02_26_051224) do
 
   create_table "ingredients", force: :cascade do |t|
     t.text "content"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_175156) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.string "mealType"
+    t.string "mealTime"
   end
 
   create_table "steps", force: :cascade do |t|
